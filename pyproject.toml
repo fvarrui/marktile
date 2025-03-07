@@ -1,0 +1,40 @@
+[build-system]
+requires      = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "marktile"
+version = "0.0.1"
+description = "Markdown to Textile converter"
+readme = "README.md"
+authors = [
+    { name = "Fran Vargas", email = "fvarrui.ceu@gmail.com" }
+]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["markdown", "textile", "converter" ]
+dependencies = [
+    "markdown-it-py[linkify,plugins]",
+    "mdformat",
+    "mdformat-gfm",
+    "pypandoc",
+    "plantuml",
+    "tabulate",
+    "toml",
+]
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
+
+[project.urls]
+
+[project.scripts]
+marktile = "cli.__main__:main"
+
+[tool.setuptools]
+include-package-data = true
