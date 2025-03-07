@@ -1,6 +1,6 @@
 # marktile
 
-![Versión](https://img.shields.io/badge/Versión-0.1.0-black)
+![Versión](https://img.shields.io/badge/Versión-0.1.1-black)
 
 Conversor de Markdown a Textile en Python.
 
