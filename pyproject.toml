@@ -22,9 +22,7 @@ dependencies = [
     "mdformat",
     "mdformat-gfm",
     "pypandoc",
-    "plantuml",
-    "tabulate",
-    "toml",
+    "plantuml"
 ]
 requires-python = ">=3.12"
 
