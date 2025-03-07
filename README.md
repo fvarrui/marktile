@@ -1,6 +1,6 @@
 # marktile
 
-![Versión](https://img.shields.io/badge/Versión-0.1.1-black)
+![Versión](https://img.shields.io/badge/Versión-0.1.2-black)
 
 Conversor de Markdown a Textile en Python.
 
@@ -23,7 +23,7 @@ $ marktile --help
 
 Uso: marktile (-h | -v | --file FILE) [--output [DIR]]
 
-Markdown to Textile converter (v0.1.0)
+Markdown to Textile converter (v0.1.2)
 
 Comandos:
   -h, --help      Muestra esta ayuda y termina
