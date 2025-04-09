@@ -38,7 +38,7 @@ Opciones:
 
 Partiendo del documento [`test.md`](tests/test.md) en formato Markdown, que contiene tablas, listas y diagramas de flujo en formato `mermaid` y `plantuml`:
 
-```markdown
+````markdown
 # Casos de prueba de marktile
 
 ## Diagramas Mermaid
@@ -97,7 +97,8 @@ En este caso de prueba se muestran las tablas en marktile y su formato:
 1. Casos de uso específicos con descripciones.
 2. Flujos de trabajo del usuario.
 3. Restricciones y validaciones necesarias.
-```
+
+````
 
 Ejecutamos `marktile` un fichero `fichero.md` a `fichero.textile`, se puede usar el siguiente comando:
 
