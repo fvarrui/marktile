@@ -1,0 +1,42 @@
+h1(#casos-de-prueba-de-marktile). Casos de prueba de marktile
+
+h2(#diagramas-mermaid). Diagramas Mermaid
+
+En este caso de prueba se intenta renderizar un diagrama de flujo en formato @mermaid@ usando @marktile@.
+
+bq. La idea es verificar que el diagrama se renderiza correctamente y se incluye en el documento @.textile@ de salida.
+
+
+
+h3(#diagrama-mermaid). Diagrama Mermaid
+
+!test_1.png!
+
+h2(#diagrama-plantuml). Diagrama PlantUML
+
+En este caso de prueba se intenta renderizar un diagrama de flujo en formato @plantuml@ usando @marktile@.
+
+bq. La idea es verificar que el diagrama se renderiza correctamente y se incluye en el documento @.textile@ de salida.
+
+
+
+h3(#diagrama-plantuml-1). Diagrama PlantUML
+
+!test_2.png!
+
+h2(#tablas). Tablas
+
+En este caso de prueba se muestran las tablas en marktile y su formato:
+
+|_. Nombre|_. Edad|_. Ciudad|
+|Juan|25|Madrid|
+|Ana|30|Barcelona|
+|Pedro|22|Valencia|
+|Laura|28|Sevilla|
+|Carlos|35|Bilbao|
+
+h2(#listas). Listas
+
+# Casos de uso específicos con descripciones.
+# Flujos de trabajo del usuario.
+# Restricciones y validaciones necesarias.
