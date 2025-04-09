@@ -14,7 +14,13 @@ def main():
                 self._add_item(self._format_usage, args)
 
     # define el parser
-    parser = argparse.ArgumentParser(prog=__project_name__, description=f"{__project_description__} (v{__project_version__})", add_help=False, formatter_class=CustomHelpFormatter)
+    parser = argparse.ArgumentParser(
+        prog=__project_name__, 
+        description=f"{__project_description__} (v{__project_version__})", 
+        add_help=False, 
+        epilog='Made with ❤️ by @fvarrui',
+        formatter_class=CustomHelpFormatter
+    )
 
     # define los comandos (mutuamente excluyentes)
     commands = parser.add_argument_group('Comandos')    
