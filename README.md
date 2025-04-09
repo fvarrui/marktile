@@ -100,7 +100,7 @@ En este caso de prueba se muestran las tablas en marktile y su formato:
 
 ````
 
-Ejecutamos `marktile` un fichero `fichero.md` a `fichero.textile`, se puede usar el siguiente comando:
+Ejecutamos `marktile` dándole como entrada el fichero `test.md`, mostrando la siguiente salida:
 
 ```bash
 $ marktile --file test.md --output .
@@ -111,7 +111,7 @@ Imagenes generadas para bloques: ['.\\test_1.png', '.\\test_2.png']
 Fichero Textile generado     : .\test.textile
 ```
 
-Esto generará un fichero [`test.textile`](/tests/test.textile) y una imagen `test_*.png` por cada diagrama en el directorio indicado (en este caso, el directorio actual `.`), con el siguiente contenido:
+Esto generará un fichero [`test.textile`](/tests/test.textile) y una imagen `test_*.png` por cada diagrama, en el directorio indicado (en este caso, el directorio actual `--output .`):
 
 ```textile
 h1(#casos-de-prueba-de-marktile). Casos de prueba de marktile
