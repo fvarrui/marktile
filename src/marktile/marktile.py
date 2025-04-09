@@ -4,8 +4,10 @@ import pypandoc
 from markdown_it import MarkdownIt
 from markdown_it.token import Token
 from mdformat.renderer import MDRenderer
+import mdformat_tables
 
 from .plantuml import plantuml_to_image
+from .mermaid import mermaid_to_image
 
 def markdown_to_textile(markdown_file: str, output_dir: str = 'output') -> None:
     """
@@ -36,13 +38,13 @@ def markdown_to_textile(markdown_file: str, output_dir: str = 'output') -> None:
     img_prefix = os.path.basename(textile_file).replace('.textile', '')
 
     # Extrae los bloques de PlantUML
-    markdown_text = replace_plantuml_with_images(markdown_text, output_dir, img_prefix)
+    markdown_text = replace_fences_with_images(markdown_text, output_dir, img_prefix)
 
     # Guardar el nuevo markdown
-    new_markdown_file = os.path.join(output_dir, os.path.basename(markdown_file))    
-    with open(new_markdown_file, 'w', encoding='utf-8', newline='\n') as file:
-        file.write(markdown_text)
-    print("Fichero Markdown generado    :", new_markdown_file)
+    #new_markdown_file = os.path.join(output_dir, os.path.basename(markdown_file))    
+    #with open(new_markdown_file, 'w', encoding='utf-8', newline='\n') as file:
+    #    file.write(markdown_text)
+    #print("Fichero Markdown generado    :", new_markdown_file)
 
     # Convierte el texto de Markdown a Textile
     textile_text = pypandoc.convert_text(markdown_text, 'textile', format='md')
@@ -53,7 +55,7 @@ def markdown_to_textile(markdown_file: str, output_dir: str = 'output') -> None:
     print("Fichero Textile generado     :", textile_file)
 
 
-def replace_plantuml_with_images(markdown_text: str, output_dir: str, img_prefix: str = '') -> str:
+def replace_fences_with_images(markdown_text: str, output_dir: str, img_prefix: str = '') -> str:
     """
     Extrae los bloques de PlantUML de un texto en formato Markdown.
     - Parámetros:
@@ -71,12 +73,12 @@ def replace_plantuml_with_images(markdown_text: str, output_dir: str, img_prefix
     images = []
     images_count = 0
     for token in tokens:
-        if token.type == 'fence' and token.info == 'plantuml':
+        if token.type == 'fence' and token.info in FENCES_TO_IMAGES:
             
             images_count += 1
 
             image_file = os.path.join(output_dir, f'{img_prefix}_{images_count}.png')
-            plantuml_to_image(token.content, image_file)
+            FENCES_TO_IMAGES[token.info](token.content, image_file)
             images.append(image_file)
 
             # Crear un token para la imagen
@@ -86,10 +88,17 @@ def replace_plantuml_with_images(markdown_text: str, output_dir: str, img_prefix
         else:
             new_tokens.append(token)
 
-    print("Imagenes generadas para bloques PlantUML:", images)
+    print("Imagenes generadas para bloques:", images)
 
     # Renderiza el texto en formato Markdown
     renderer = MDRenderer()
-    markdown_text = renderer.render(new_tokens, options = {}, env = {})
+    markdown_text = renderer.render(new_tokens, options = {
+        "parser_extension": [mdformat_tables]
+    }, env = {})
 
     return markdown_text
+
+FENCES_TO_IMAGES = {
+    'plantuml': plantuml_to_image,
+    'mermaid': mermaid_to_image,
+}

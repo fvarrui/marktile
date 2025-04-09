@@ -18,11 +18,16 @@ classifiers = [
 ]
 keywords = ["markdown", "textile", "converter" ]
 dependencies = [
-    "markdown-it-py[linkify,plugins]",
-    "mdformat",
-    "mdformat-gfm",
-    "pypandoc",
-    "plantuml"
+    "markdown-it-py[linkify,plugins]",      # for markdown parsing
+    "matplotlib",                           # for graph generation
+    "mdformat",                             # for markdown formatting
+    "mdformat-gfm",                         # for GFM support
+    "mdformat-tables",                      # for tables support
+    "mdformat-toc",                         # for table of contents support
+    "pillow",                               # for image conversion
+    "pypandoc",                             # for pandoc conversion
+    "plantuml",                             # for plantuml conversion
+    "requests"                              # for http requests
 ]
 requires-python = ">=3.12"
 
