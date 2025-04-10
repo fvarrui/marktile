@@ -18,7 +18,7 @@ def main():
         prog=__project_name__, 
         description=f"{__project_description__} (v{__project_version__})", 
         add_help=False, 
-        epilog='Made with ❤️ by @fvarrui',
+        epilog='Made with ❤️ by fvarrui',
         formatter_class=CustomHelpFormatter
     )
 
