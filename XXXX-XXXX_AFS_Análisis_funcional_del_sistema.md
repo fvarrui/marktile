@@ -11,15 +11,9 @@ revisions:
     author: "Chuck Norris"
 ---
 
-# Portada
-
-\pagebreak
-
 # Revisión del Documento
 
-$for(revisions)$
-- **Fecha:** $revisions.author$
-$endfor$
+[[REVISIONS]]
 
 \newpage
 

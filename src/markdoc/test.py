@@ -19,17 +19,27 @@ def md_to_odt():
     # Convertir a ODT
     output_file = "XXXX-XXXX_AFS_Análisis_funcional_del_sistema.odt"
     pypandoc.convert_file(
-        input_file, 
+        source_file=input_file, 
+        to='md', 
+        outputfile='temporal.md', 
+    )
+    pypandoc.convert_file(
+        source_file='temporal.md', 
         to='odt', 
         outputfile=output_file, 
-        extra_args=[            
+        extra_args=[
             '--reference-doc=template.odt',
             '--toc',
             '--toc-depth=3',
             '--standalone',
             '--lua-filter=filters/pagebreak.lua',
             '--lua-filter=filters/diagram.lua',
-            '--metadata=image-width:100%',            
+            '--lua-filter=filters/revisions.lua',
+            '--metadata=image-width:100%',
+            '--metadata=title:',
+            '--metadata=subtitle:',
+            '--metadata=author:',
+            '--metadata=date:'
         ]
     )
     print("Conversión completada.")
