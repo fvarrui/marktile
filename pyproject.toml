@@ -24,6 +24,7 @@ dependencies = [
     "mdformat-gfm",                         # for GFM support
     "mdformat-tables",                      # for tables support
     "mdformat-toc",                         # for table of contents support
+    "panflute",                             # for pandoc filters
     "pillow",                               # for image conversion
     "pypandoc",                             # for pandoc conversion
     "plantuml",                             # for plantuml conversion

@@ -11,9 +11,11 @@ revisions:
     author: "Chuck Norris"
 ---
 
-# Revisión del Documento
+\newpage
 
-[[REVISIONS]]
+# HISTORIAL DE REVISIONES
+
+\revisions
 
 \newpage
 
@@ -23,6 +25,7 @@ En este punto se debe describir el propósito de este documento.
 
 ```plantuml
 @startuml
+scale 750 width
 actor Responsable as RES
 box "Ekadia" #LightBlue
     participant "**Portal**" as PEK #Beige
@@ -49,7 +52,7 @@ RES -> PEK: Consulta detalle\nde solicitud de\nautorización pendiente
 PEK -> SOL: Recupera detalle\nde solicitud
 RES -> PEK: Autoriza/rechaza\nsolicitud (firma)
 PEK -> SOL: Establece respuesta\na solicitud (firma)
-SOL --> AUT: Comunica respuesta a\nsolicitud de autorización\n(¿EducaMQ?)
+SOL --> AUT: Comunica respuesta a\nsolicitud de autorización\n(EducaMQ)
 == Consulta de autorizaciones ==
 DOC -> AUT: Consultar autorizaciones
 == Cancelar una autorización ==
@@ -59,7 +62,7 @@ AUT -> COM: Crea comunicación\ninformando de la cancelación
 == Revocar una autorización ==
 RES -> PEK: Revoca autorización
 PEK -> SOL: Establece revocación\nde autorización
-SOL --> AUT: Comunica revocación\nde autorización\n(¿EducaMQ?)
+SOL --> AUT: Comunica revocación\nde autorización\n(EducaMQ)
 @enduml
 ```
 
