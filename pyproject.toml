@@ -39,6 +39,7 @@ dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
 
 [project.scripts]
 marktile = "cli.__main__:main"
+markdoc = "markdoc.__main__:main"
 
 [tool.setuptools]
 include-package-data = true
