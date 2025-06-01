@@ -3,9 +3,9 @@ requires      = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "marktile"
+name = "marktools"
 version = "0.2.0"
-description = "Markdown to Textile converter"
+description = "Markdown tools"
 readme = "README.md"
 authors = [
     { name = "Fran Vargas", email = "fvarrui.ceu@gmail.com" }
@@ -18,6 +18,7 @@ classifiers = [
 ]
 keywords = ["markdown", "textile", "converter" ]
 dependencies = [
+    "glob2",                                # for globbing files
     "markdown-it-py[linkify,plugins]",      # for markdown parsing
     "matplotlib",                           # for graph generation
     "mdformat",                             # for markdown formatting
@@ -38,8 +39,8 @@ dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
 [project.urls]
 
 [project.scripts]
-marktile = "cli.__main__:main"
-markdoc = "markdoc.__main__:main"
+marktile = "marktile.__main__:main"
+markodt = "markodt.__main__:main"
 
 [tool.setuptools]
 include-package-data = true
