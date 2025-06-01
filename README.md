@@ -10,7 +10,7 @@ Para instalar **marktools** en tu sistema, puedes hacerlo desde el repositorio d
 pip install git+https://github.com/fvarrui/marktools.git
 ```
 
-> Por supuesto, debes tener Python instalado en tu sistema.
+> ℹ️ También debes tener instalado **PlantUML** y **pandoc** y, por supuesto, **Python**.
 
 Si ya has instalado alguna versión de `marktools`, puedes actualizarlo con el siguiente comando:
 
@@ -18,7 +18,7 @@ Si ya has instalado alguna versión de `marktools`, puedes actualizarlo con el s
 pip install --upgrade --force-reinstall --no-cache-dir git+https://github.com/fvarrui/marktools.git
 ```
 
-> ⚠️ También debes tener instalado **PlantUML** y **pandoc**.
+> 
 
 ## Para desarrolladores
 
